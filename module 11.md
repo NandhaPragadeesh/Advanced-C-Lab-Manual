@@ -12,10 +12,42 @@ Algorithm:
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 Program:
-//type your code here
+```
+#include<stdio.h>
+int max_of_four(int a, int b, int c, int d)
+{
+    int max;
+    if(a>b && a>c && a>d)
+    {
+        max=a;
+    }
+    else if(b>a && b>c && b>d)
+    {
+        max=b;
+    }
+    else if(c>a && c>b && c>d)
+    {
+        max=c;
+    }
+    else
+    {
+        max=d;
+    }
+    return max;
+}
+int main()
+{
+    int a,b,c,d;
+    scanf("%d %d %d %d",&a,&b,&c,&d);
+    printf("%d",max_of_four(a,b,c,d));
+}
+```
 
 Output:
-//paste your output here
+
+<img width="510" height="344" alt="Screenshot 2025-11-25 224019" src="https://github.com/user-attachments/assets/61ba61c2-c02b-465a-863d-8aad882b6aa5" />
+
+
 
 Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
@@ -36,10 +68,44 @@ Algorithm:
 7.	Call the calculate_the_max function with input values.
  
 Program:
-//type your code here
+```
+#include<stdio.h>
+void calculate_the_max(int n,int k)
+{
+int a=0,o=0,x=0;
+for(int i=1;i<=n;i++)
+{
+for(int j=1+i;j<=n;j++)
+{
+if((i&j)>a && (i&j)<k)
+{
+a=i&j;
+}
+if((i|j)>o && (i|j)<k)
+{
+o=i|j;
+}
+if((i^j)>x && (i^j)<k)
+{
+x=i^j;
+}
+}
+}
+printf("%d\n%d\n%d\n",a,o,x);
+}
+int main()
+{
+int n,k;
+scanf("%d%d",&n,&k);
+calculate_the_max(n,k);
+}
+```
 
 Output:
-//paste your output here
+
+<img width="712" height="392" alt="Screenshot 2025-11-25 224028" src="https://github.com/user-attachments/assets/cb05af62-5d40-46f1-a9ee-c53606e4ec1c" />
+
+
 
 Result:
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
@@ -59,10 +125,44 @@ Algorithm:
 5.	Use a for loop to iterate over the queries.
  
 Program:
-//type your code here
+```
+#include<stdio.h>
+int main()
+{
+int s;
+int n;
+scanf("%d %d",&s,&n);
+int lib[1000][1000]={0};
+int cnt[1000]={0};
+for(int i=0;i<n;i++)
+{
+    int qt,x,y;
+    scanf("%d",&qt);
+    if(qt==1)
+    {
+        scanf("%d %d",&x,&y);
+        lib[x][cnt[x]]=y;
+        cnt[x]++;
+    }
+    if(qt==2)
+    {
+        scanf("%d %d",&x,&y);
+        printf("%d\n",lib[x][y]);
+    }
+    if(qt==3)
+    {
+        scanf("%d",&x);
+        printf("%d",cnt[x]);
+        
+    }
+}
+}
+```
 
 Output:
-//paste your output here
+
+<img width="544" height="364" alt="Screenshot 2025-11-25 224040" src="https://github.com/user-attachments/assets/0f01729c-ac0d-48a5-8062-a4136ff55984" />
+
 
 
 Result:
@@ -86,11 +186,26 @@ Algorithm:
 
 
 Program:
-//type your code here
+```
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,s=0;
+    scanf("%d",&n);
+    int *arr=(int*)malloc(n*sizeof(int));
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+        s+=arr[i];
+    }
+    printf("%d",s);
+}
+```
 
 Output:
-//paste your output here
 
+<img width="1108" height="284" alt="Screenshot 2025-11-25 224118" src="https://github.com/user-attachments/assets/b6481086-cac1-471e-8bf9-c0e0a8b469e1" />
  
 
 
@@ -120,10 +235,28 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 
 
 Program:
-//type your code here
+```
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    fgets(str,sizeof(str),stdin);
+    int len=sizeof(str);
+    int count=1;
+    for(int i=0;i<len-1;i++)
+    {
+        if(str[i]==' ')
+        count++;  
+    }
+    printf("Total number of words in the string is :%d",count);
+    return 0;
+}
+```
 
 Output:
-//paste your output here
+
+<img width="1098" height="146" alt="Screenshot 2025-11-25 224132" src="https://github.com/user-attachments/assets/0254206b-9e6c-4892-8be4-c9bf166e7ebe" />
 
 
 
